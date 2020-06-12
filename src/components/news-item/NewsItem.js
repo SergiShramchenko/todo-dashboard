@@ -7,6 +7,5 @@ export default ({ url, id, name, title }) => (
     <a href={url} target='_blank' rel='noopener noreferrer'>
       {title}
     </a>
-    {/* <p>politico</p> */}
   </li>
 );

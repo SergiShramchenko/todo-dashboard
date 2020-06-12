@@ -1,12 +1,18 @@
 /* NEWS */
 
 .todo-info__news {
-  height: 35%;
+  height: 50%;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   color: rgb(201, 196, 196);
+  /* border: solid 1px tomato; */
+  background-color: rgb(46, 45, 45);
+}
+
+.todo-info__news h3 {
+  margin-top: 20px;
 }
 
 /* NEWS */

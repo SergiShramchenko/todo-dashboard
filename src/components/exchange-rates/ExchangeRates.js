@@ -2,14 +2,18 @@ import React from 'react';
 
 import './exchangeRates.css';
 
-export default ({ currencies: { EUR, RUB, USD } }) => (
+export default ({ rates: { EUR, GBP, RUB } }) => (
   <div className='todo-info__exchange-rate'>
-    <h3>Excahgne</h3>
+    <h3>Currencies</h3>
     <div className='todo-info__exchange-rate-data'>
-      <h3>For 1 USD:</h3>
-      <p>{EUR}</p>
-      <p>{RUB}</p>
-      <p>{USD}</p>
+      <p className='usd'>
+        1 <span>usd</span>
+      </p>
+      <div className='todo-info__exchange-rate-data-list'>
+        <p>GBP {GBP}</p>
+        <p>EUR {EUR}</p>
+        <p>RUB {RUB}</p>
+      </div>
     </div>
   </div>
 );

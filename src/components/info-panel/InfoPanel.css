@@ -1,7 +1,7 @@
 /* SIDE PANEL START */
 
 .todo-info {
-  border-right: solid 1px rgb(65, 63, 63);
+  /* border-right: solid 1px rgb(65, 63, 63); */
   height: 100%;
   width: 22%;
   display: flex;

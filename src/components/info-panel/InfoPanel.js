@@ -1,47 +1,44 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-import News from '../news';
-import ExchangeRates from '../exchange-rates';
-import Weather from '../weather';
+import { createStructuredSelector } from 'reselect';
 
 import {
-  getCurrentNewsInfo,
-  getCurrentRatesInfo,
-  getCurrentWeatherInfo,
-} from '../../redux/info/info.actions';
+  selectWeaher,
+  selectNews,
+  selectRates,
+} from '../../redux/info/info.selectors';
+
+import { getDataInfo } from '../../redux/info/info.actions';
+
+import News from '../news';
+import Weather from '../weather';
+import ExchangeRates from '../exchange-rates';
 
 import './InfoPanel.css';
 
 class InfoPanel extends Component {
-  async componentDidMount() {
-    await this.props.getCurrentNewsInfo();
-    await this.props.getCurrentRatesInfo();
-    await this.props.getCurrentWeatherInfo();
-  }
+  componentDidMount = () => this.props.getDataInfo();
+
   render() {
-    const {
-      info: {
-        news,
-        rates: { EUR, USD, RUB },
-      },
-    } = this.props;
+    const { weather, news, rates } = this.props;
     return (
       <div className='todo-info'>
-        <Weather />
+        <Weather weather={weather} />
         <News news={news} />
-        <ExchangeRates currencies={{ EUR, USD, RUB }} />
+        <ExchangeRates rates={rates} />
       </div>
     );
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  getCurrentNewsInfo: () => dispatch(getCurrentNewsInfo()),
-  getCurrentRatesInfo: () => dispatch(getCurrentRatesInfo()),
-  getCurrentWeatherInfo: () => dispatch(getCurrentWeatherInfo()),
+const mapStateToProps = createStructuredSelector({
+  news: selectNews,
+  rates: selectRates,
+  weather: selectWeaher,
 });
 
-const mapStateToProps = ({ info }) => ({ info });
+const mapDispatchToProps = (dispatch) => ({
+  getDataInfo: () => dispatch(getDataInfo()),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(InfoPanel);
