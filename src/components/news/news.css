@@ -1,0 +1,12 @@
+/* NEWS */
+
+.todo-info__news {
+  height: 35%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  color: rgb(201, 196, 196);
+}
+
+/* NEWS */

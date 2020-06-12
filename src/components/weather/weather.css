@@ -1,0 +1,9 @@
+.todo-info__weather {
+  height: 30%;
+  width: 100%;
+}
+
+.todo-info__weather-data {
+  width: 95%;
+  margin: 0 auto;
+}
