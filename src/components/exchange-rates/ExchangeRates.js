@@ -1,19 +1,15 @@
 import React from 'react';
+import dollarLogo from '../../assets/coin_dollar.svg';
+
+import CurrencyList from '../currency-list/CurrencyList';
 
 import './exchangeRates.css';
 
-export default ({ rates: { EUR, GBP, RUB } }) => (
+export default ({ rates }) => (
   <div className='todo-info__exchange-rate'>
-    <h3>Currencies</h3>
     <div className='todo-info__exchange-rate-data'>
-      <p className='usd'>
-        1 <span>usd</span>
-      </p>
-      <div className='todo-info__exchange-rate-data-list'>
-        <p>GBP {GBP}</p>
-        <p>EUR {EUR}</p>
-        <p>RUB {RUB}</p>
-      </div>
+      <img className='dollar-icon' src={dollarLogo} alt='dollar_icon' />
+      <CurrencyList rates={rates} />
     </div>
   </div>
 );

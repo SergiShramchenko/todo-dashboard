@@ -1,19 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import InfoPanel from '../info-panel';
 import TasksPanel from '../tasks-panel';
 
+import { getDataInfo } from '../../redux/info/info.action.creators';
+
 import './App.css';
+import { connect } from 'react-redux';
 
-// const openWeatherMapApiKey = '7f70d7aad0ed68b8146bb8b1ba3352c5';
+class App extends Component {
+  componentDidMount = () => this.props.getDataInfo();
+  render() {
+    return (
+      <div className='app-container'>
+        <div className='todo'>
+          <InfoPanel />
+          <TasksPanel />
+        </div>
+      </div>
+    );
+  }
+}
 
-const App = () => (
-  <div className='app-container'>
-    <div className='todo'>
-      <InfoPanel />
-      <TasksPanel />
-    </div>
-  </div>
-);
+const mapDispatchToProps = (dispatch) => ({
+  getDataInfo: () => dispatch(getDataInfo()),
+});
 
-export default App;
+export default connect(null, mapDispatchToProps)(App);
