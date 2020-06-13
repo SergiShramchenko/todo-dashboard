@@ -1,0 +1,18 @@
+.options {
+  margin-top: 25px;
+  display: flex;
+  margin-left: 0;
+  width: 60%;
+  /* border: solid 1px tomato; */
+  justify-content: flex-end;
+}
+
+.options-features {
+  /* border: solid 1px blue; */
+  width: 35%;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 10px;
+  color: rgb(114, 112, 112);
+  font-size: 13px;
+}

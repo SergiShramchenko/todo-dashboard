@@ -9,6 +9,7 @@
   color: rgb(201, 196, 196);
   /* border: solid 1px tomato; */
   background-color: rgb(46, 45, 45);
+  overflow: auto;
 }
 
 .todo-info__news h3 {
@@ -16,3 +17,21 @@
 }
 
 /* NEWS */
+
+.todo-info__news::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.todo-info__news::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* .todo-info__news::-webkit-scrollbar-track { */
+/* box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+/* } */
+
+.todo-info__news::-webkit-scrollbar-thumb {
+  background-color: rgb(107, 106, 106);
+  outline: 1px solid slategrey;
+}

@@ -51,3 +51,15 @@ export const getDataInfo = () => async (dispatch) => {
   await dispatch(getCurrentRatesInfo());
   dispatch(stopLoading());
 };
+
+// export const fetchApiData = () => (dispatch) => {
+//   dispatch(getCurrentWeatherInfo());
+//   dispatch(getCurrentNewsInfo());
+//   dispatch(getCurrentRatesInfo());
+// };
+
+// export const getDataInfo = () => async (dispatch) => {
+//   dispatch(startLoading());
+//   await dispatch(fetchApiData());
+//   dispatch(stopLoading());
+// };

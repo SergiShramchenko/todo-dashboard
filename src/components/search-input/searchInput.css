@@ -1,0 +1,18 @@
+.todo-tasks__input {
+  margin-top: 30px;
+  width: 60%;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(85, 83, 83);
+  text-indent: 10px;
+  color: rgb(151, 149, 149);
+}
+.todo-tasks__input:focus {
+  outline: none;
+}
+
+.todo-tasks__input::placeholder {
+  color: rgb(151, 149, 149);
+  font-size: 11px;
+}

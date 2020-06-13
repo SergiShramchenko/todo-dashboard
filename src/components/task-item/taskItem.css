@@ -1,0 +1,30 @@
+.tasks__item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 35px;
+  margin-top: 10px;
+}
+
+.tasks__item:last-child {
+  margin-bottom: 0;
+}
+
+.tasks__item-functions {
+  margin-right: 20px;
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* TODO-TASKS END */
+
+/*  */
+
+.material-icons {
+  font-size: 16px;
+}
+
+/*  */

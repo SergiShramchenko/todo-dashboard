@@ -1,0 +1,61 @@
+.tasks {
+  margin-top: 30px;
+  width: 100%;
+  height: 80%;
+  color: rgb(151, 149, 149);
+  margin-bottom: 30px;
+  /* border: solid 1px tomato; */
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.tasks::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.tasks::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* .tasks::-webkit-scrollbar-track { */
+/* box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+/* } */
+
+.tasks::-webkit-scrollbar-thumb {
+  background-color: rgb(107, 106, 106);
+  outline: 1px solid slategrey;
+}
+
+/* TASK ITEM START */
+
+.tasks__item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 35px;
+  margin-top: 10px;
+}
+
+.tasks__item:last-child {
+  margin-bottom: 0;
+}
+
+.tasks__item-functions {
+  margin-right: 20px;
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* TODO-TASKS END */
+
+/*  */
+
+.material-icons {
+  font-size: 16px;
+}
+
+/* TASK ITEM END */
