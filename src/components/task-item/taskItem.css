@@ -25,6 +25,21 @@
 
 .material-icons {
   font-size: 16px;
+  cursor: pointer;
 }
 
 /*  */
+
+/*  DONE IMPORTANT DELETE */
+
+.item.done {
+  color: rgb(95, 134, 113);
+  text-decoration: line-through;
+}
+
+.item.important {
+  font-size: 20px;
+  color: tomato;
+}
+
+/*  DONE IMPORTANT DELETE */

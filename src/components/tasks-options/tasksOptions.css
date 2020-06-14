@@ -16,3 +16,15 @@
   color: rgb(114, 112, 112);
   font-size: 13px;
 }
+
+.options-features p {
+  padding: 5px;
+  border-radius: 5px;
+  width: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #363333;
+}

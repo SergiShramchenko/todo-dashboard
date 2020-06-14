@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { getDataInfo } from '../../redux/info/info.action.creators';
 
 import InfoPanel from '../info-panel';
 import TasksPanel from '../tasks-panel';
 
-import { getDataInfo } from '../../redux/info/info.action.creators';
-
 import './App.css';
-import { connect } from 'react-redux';
 
 class App extends Component {
-  componentDidMount = () => this.props.getDataInfo();
+  // componentDidMount = () => this.props.getDataInfo();
   render() {
     return (
       <div className='app-container'>

@@ -1,2 +1,8 @@
 export const ADD_TASK = 'ADD_TASK';
 export const DELETE_TASK = 'DELETE_TASK';
+export const TOGGLE_DONE = 'TOGGLE_DONE';
+export const TOGGLE_IMPORTANT = 'TOGGLE_IMPORTANT';
+export const GET_SEARCH_VALUE = 'GET_SEARCH_VALUE';
+export const TOGGLE_BTN_ALL = 'TOGGLE_BTN_ALL';
+export const TOGGLE_BTN_ACTIVE = 'TOGGLE_BTN_ACTIVE';
+export const TOGGLE_BTN_DONE = 'TOGGLE_BTN_DONE';

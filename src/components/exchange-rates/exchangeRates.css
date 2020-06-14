@@ -4,8 +4,9 @@
   background-color: rgba(31, 41, 36, 0.336);
   overflow: auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
   /* border: solid 1px tomato; */
 }
 
@@ -20,6 +21,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .usd {
@@ -65,7 +67,6 @@
 }
 
 .dollar-icon {
-  /* object-fit: cover; */
-  /* margin-top: 20px; */
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
