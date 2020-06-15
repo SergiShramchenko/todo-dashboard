@@ -1,8 +1,7 @@
 import {
   ADD_TASK,
   DELETE_TASK,
-  TOGGLE_DONE,
-  TOGGLE_IMPORTANT,
+  TOGGLE_TASK_OPTIONS,
   GET_SEARCH_VALUE,
   TOGGLE_BTN_ALL,
   TOGGLE_BTN_ACTIVE,
@@ -16,21 +15,18 @@ const initialState = {
       name: 'Learn TypeScript',
       done: false,
       important: false,
-      active: true,
     },
     {
       id: 1,
       name: 'Learn ECMAScript',
       done: false,
       important: false,
-      active: true,
     },
     {
       id: 2,
       name: 'Learn MobX',
       done: true,
       important: false,
-      active: true,
     },
   ],
   options: {
@@ -53,7 +49,6 @@ export default (state = initialState, action) => {
             name: action.payload,
             done: false,
             important: false,
-            active: false,
           },
         ],
       };
@@ -62,28 +57,17 @@ export default (state = initialState, action) => {
         ...state,
         tasks: [...state.tasks.filter(({ id }) => id !== action.payload)],
       };
-    case TOGGLE_DONE:
+    case TOGGLE_TASK_OPTIONS:
       return {
         ...state,
         tasks: [
           ...state.tasks.map((task) => {
             return {
               ...task,
-              done: task.id === action.payload ? !task.done : task.done,
-              active: task.id === action.payload ? !task.active : task.active,
-            };
-          }),
-        ],
-      };
-    case TOGGLE_IMPORTANT:
-      return {
-        ...state,
-        tasks: [
-          ...state.tasks.map((task) => {
-            return {
-              ...task,
-              important:
-                task.id === action.payload ? !task.important : task.important,
+              [action.optName]:
+                task.id === action.taskId
+                  ? !task[action.optName]
+                  : task[action.optName],
             };
           }),
         ],

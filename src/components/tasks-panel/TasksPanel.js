@@ -11,8 +11,7 @@ import {
 import {
   addTask,
   deleteTask,
-  toggleDone,
-  toggleImportant,
+  toggleTaskOptions,
   getSearchValue,
   toggleBtnAll,
   toggleBtnActive,
@@ -20,7 +19,7 @@ import {
 } from '../../redux/tasks/tasks.actions';
 
 import SearchInput from '../search-input';
-import TasksOptions from '../tasks-options';
+import TasksOptions from '../nav-options';
 import TasksList from '../tasks-list';
 
 import './tasksPanel.css';
@@ -32,14 +31,13 @@ const TasksPanel = ({
   getSearchValue,
   addTask,
   deleteTask,
-  toggleDone,
-  toggleImportant,
+  toggleTaskOptions,
   toggleBtnAll,
   toggleBtnActive,
   toggleBtnDone,
 }) => (
   <div className='todo-tasks'>
-    <SearchInput getSearchValue={getSearchValue} />
+    <SearchInput getSearchValue={getSearchValue} searchValue={searchValue} />
     <TasksOptions
       toggleBtnAll={toggleBtnAll}
       toggleBtnActive={toggleBtnActive}
@@ -51,9 +49,8 @@ const TasksPanel = ({
       searchValue={searchValue}
       options={options}
       addTask={addTask}
-      toggleDone={toggleDone}
-      toggleImportant={toggleImportant}
       deleteTask={deleteTask}
+      toggleTaskOptions={toggleTaskOptions}
     />
   </div>
 );
@@ -67,8 +64,8 @@ const mapStateToProps = createStructuredSelector({
 const mapDispatchToProps = (dispatch) => ({
   addTask: (task) => dispatch(addTask(task)),
   deleteTask: (taskId) => dispatch(deleteTask(taskId)),
-  toggleDone: (taskId) => dispatch(toggleDone(taskId)),
-  toggleImportant: (taskId) => dispatch(toggleImportant(taskId)),
+  toggleTaskOptions: (taskId, optName) =>
+    dispatch(toggleTaskOptions(taskId, optName)),
   getSearchValue: (value) => dispatch(getSearchValue(value)),
   toggleBtnAll: () => dispatch(toggleBtnAll()),
   toggleBtnActive: () => dispatch(toggleBtnActive()),

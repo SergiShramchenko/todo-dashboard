@@ -70,8 +70,8 @@
 }
 
 .temp {
-  font-size: 25px;
-  color: rgb(110, 175, 172);
+  font-size: 25px !important;
+  color: rgb(110, 175, 172) !important;
 }
 
 .todo-info__weather::-webkit-scrollbar {

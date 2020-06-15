@@ -11,17 +11,15 @@ export default ({
   options,
   addTask,
   deleteTask,
-  toggleDone,
-  toggleImportant,
+  toggleTaskOptions,
 }) => (
   <div className='tasks'>
     <TaskItem
       tasks={tasks}
       options={options}
-      toggleDone={toggleDone}
-      toggleImportant={toggleImportant}
       deleteTask={deleteTask}
       searchValue={searchValue}
+      toggleTaskOptions={toggleTaskOptions}
     />
     <NewTaskItem addTask={addTask} />
   </div>
