@@ -1,14 +1,13 @@
 import React from 'react';
 
+import CurrencyName from '../currency-name';
+import CurrencyRate from '../currency-rate';
+
 import './currencyItem.css';
 
 export default ({ name, currency }) => (
   <div className='currency-item'>
-    <div className='currency-item-name'>
-      <p>{name}</p>
-    </div>
-    <div className='currency-item-rate'>
-      <span>{currency}</span>
-    </div>
+    <CurrencyName name={name} />
+    <CurrencyRate currency={currency} />
   </div>
 );

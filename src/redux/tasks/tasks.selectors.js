@@ -13,3 +13,8 @@ export const selectOptions = createSelector(
   [selectTodo],
   ({ options }) => options
 );
+
+export const selectNewTaskValue = createSelector(
+  [selectTodo],
+  ({ newTaskValue }) => newTaskValue
+);

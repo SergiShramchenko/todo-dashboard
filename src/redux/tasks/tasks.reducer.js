@@ -1,12 +1,26 @@
 import {
   ADD_TASK,
   DELETE_TASK,
-  TOGGLE_TASK_OPTIONS,
+  TOGGLE_OPTIONS,
   GET_SEARCH_VALUE,
   TOGGLE_BTN_ALL,
   TOGGLE_BTN_ACTIVE,
   TOGGLE_BTN_DONE,
+  GET_NEW_TASK_VALUE,
+  CLEAN_UP_INPUT,
 } from './tasks.types';
+
+import {
+  addTask,
+  deleteTask,
+  toogleOptions,
+  getSearchValue,
+  getNewTaskValue,
+  cleanUpInput,
+  toggleBtnAll,
+  toggleBtnActive,
+  toggleBtnDone,
+} from './tasks.reducer.utils';
 
 const initialState = {
   tasks: [
@@ -35,63 +49,29 @@ const initialState = {
     done: false,
   },
   searchValue: '',
+  newTaskValue: '',
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case ADD_TASK:
-      return {
-        ...state,
-        tasks: [
-          ...state.tasks,
-          {
-            id: state.tasks.length + 1,
-            name: action.payload,
-            done: false,
-            important: false,
-          },
-        ],
-      };
+      return addTask(state, action);
     case DELETE_TASK:
-      return {
-        ...state,
-        tasks: [...state.tasks.filter(({ id }) => id !== action.payload)],
-      };
-    case TOGGLE_TASK_OPTIONS:
-      return {
-        ...state,
-        tasks: [
-          ...state.tasks.map((task) => {
-            return {
-              ...task,
-              [action.optName]:
-                task.id === action.taskId
-                  ? !task[action.optName]
-                  : task[action.optName],
-            };
-          }),
-        ],
-      };
+      return deleteTask(state, action);
+    case TOGGLE_OPTIONS:
+      return toogleOptions(state, action);
     case GET_SEARCH_VALUE:
-      return {
-        ...state,
-        searchValue: action.payload,
-      };
+      return getSearchValue(state, action);
+    case GET_NEW_TASK_VALUE:
+      return getNewTaskValue(state, action);
+    case CLEAN_UP_INPUT:
+      return cleanUpInput(state);
     case TOGGLE_BTN_ALL:
-      return {
-        ...state,
-        options: { all: true, active: false, done: false },
-      };
+      return toggleBtnAll(state);
     case TOGGLE_BTN_ACTIVE:
-      return {
-        ...state,
-        options: { all: false, active: true, done: false },
-      };
+      return toggleBtnActive(state);
     case TOGGLE_BTN_DONE:
-      return {
-        ...state,
-        options: { all: false, active: false, done: true },
-      };
+      return toggleBtnDone(state);
 
     default:
       return state;

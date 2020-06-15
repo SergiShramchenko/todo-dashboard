@@ -1,11 +1,13 @@
 import {
   ADD_TASK,
   DELETE_TASK,
-  TOGGLE_TASK_OPTIONS,
+  TOGGLE_OPTIONS,
   GET_SEARCH_VALUE,
   TOGGLE_BTN_ALL,
   TOGGLE_BTN_ACTIVE,
   TOGGLE_BTN_DONE,
+  GET_NEW_TASK_VALUE,
+  CLEAN_UP_INPUT,
 } from './tasks.types';
 
 export const addTask = (task) => ({
@@ -17,8 +19,8 @@ export const deleteTask = (taskId) => ({
   payload: taskId,
 });
 
-export const toggleTaskOptions = (taskId, optName) => ({
-  type: TOGGLE_TASK_OPTIONS,
+export const toggleOptions = (taskId, optName) => ({
+  type: TOGGLE_OPTIONS,
   taskId,
   optName,
 });
@@ -26,6 +28,15 @@ export const toggleTaskOptions = (taskId, optName) => ({
 export const getSearchValue = (value) => ({
   type: GET_SEARCH_VALUE,
   payload: value,
+});
+
+export const getNewTaskValue = (value) => ({
+  type: GET_NEW_TASK_VALUE,
+  payload: value,
+});
+
+export const cleanUpInput = () => ({
+  type: CLEAN_UP_INPUT,
 });
 
 export const toggleBtnAll = () => ({

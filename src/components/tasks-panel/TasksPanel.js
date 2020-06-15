@@ -6,20 +6,23 @@ import {
   selectTasks,
   selectSearchValue,
   selectOptions,
+  selectNewTaskValue,
 } from '../../redux/tasks/tasks.selectors';
 
 import {
-  addTask,
   deleteTask,
-  toggleTaskOptions,
+  toggleOptions,
   getSearchValue,
   toggleBtnAll,
   toggleBtnActive,
   toggleBtnDone,
+  getNewTaskValue,
 } from '../../redux/tasks/tasks.actions';
 
+import { addNewItem } from '../../redux/tasks/tasks.action.creators';
+
 import SearchInput from '../search-input';
-import TasksOptions from '../nav-options';
+import NavOptions from '../nav-options';
 import TasksList from '../tasks-list';
 
 import './tasksPanel.css';
@@ -27,18 +30,20 @@ import './tasksPanel.css';
 const TasksPanel = ({
   tasks,
   searchValue,
+  newTaskValue,
   options,
   getSearchValue,
-  addTask,
   deleteTask,
-  toggleTaskOptions,
+  toggleOptions,
   toggleBtnAll,
   toggleBtnActive,
   toggleBtnDone,
+  getNewTaskValue,
+  addNewItem,
 }) => (
   <div className='todo-tasks'>
     <SearchInput getSearchValue={getSearchValue} searchValue={searchValue} />
-    <TasksOptions
+    <NavOptions
       toggleBtnAll={toggleBtnAll}
       toggleBtnActive={toggleBtnActive}
       toggleBtnDone={toggleBtnDone}
@@ -47,10 +52,12 @@ const TasksPanel = ({
     <TasksList
       tasks={tasks}
       searchValue={searchValue}
+      newTaskValue={newTaskValue}
       options={options}
-      addTask={addTask}
       deleteTask={deleteTask}
-      toggleTaskOptions={toggleTaskOptions}
+      toggleOptions={toggleOptions}
+      getNewTaskValue={getNewTaskValue}
+      addNewItem={addNewItem}
     />
   </div>
 );
@@ -58,18 +65,19 @@ const TasksPanel = ({
 const mapStateToProps = createStructuredSelector({
   tasks: selectTasks,
   searchValue: selectSearchValue,
+  newTaskValue: selectNewTaskValue,
   options: selectOptions,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  addTask: (task) => dispatch(addTask(task)),
   deleteTask: (taskId) => dispatch(deleteTask(taskId)),
-  toggleTaskOptions: (taskId, optName) =>
-    dispatch(toggleTaskOptions(taskId, optName)),
+  toggleOptions: (taskId, optName) => dispatch(toggleOptions(taskId, optName)),
   getSearchValue: (value) => dispatch(getSearchValue(value)),
+  getNewTaskValue: (value) => dispatch(getNewTaskValue(value)),
   toggleBtnAll: () => dispatch(toggleBtnAll()),
   toggleBtnActive: () => dispatch(toggleBtnActive()),
   toggleBtnDone: () => dispatch(toggleBtnDone()),
+  addNewItem: (e, item) => dispatch(addNewItem(e, item)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TasksPanel);

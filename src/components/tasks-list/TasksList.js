@@ -8,10 +8,12 @@ import './tasksList.css';
 export default ({
   tasks,
   searchValue,
+  newTaskValue,
   options,
-  addTask,
   deleteTask,
-  toggleTaskOptions,
+  toggleOptions,
+  getNewTaskValue,
+  addNewItem,
 }) => (
   <div className='tasks'>
     <TaskItem
@@ -19,8 +21,12 @@ export default ({
       options={options}
       deleteTask={deleteTask}
       searchValue={searchValue}
-      toggleTaskOptions={toggleTaskOptions}
+      toggleOptions={toggleOptions}
     />
-    <NewTaskItem addTask={addTask} />
+    <NewTaskItem
+      newTaskValue={newTaskValue}
+      getNewTaskValue={getNewTaskValue}
+      addNewItem={addNewItem}
+    />
   </div>
 );

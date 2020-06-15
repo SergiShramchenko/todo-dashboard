@@ -1,5 +1,7 @@
 import { GET_WEATHER, GET_NEWS, GET_RATES, GET_ERROR } from './info.types';
 
+import { getWeather, getNews, getRates, getError } from './info.reducer.utils';
+
 const initialState = {
   news: [],
   rates: {},
@@ -11,26 +13,13 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case GET_WEATHER:
-      return {
-        ...state,
-        weather: action.payload,
-      };
+      return getWeather(state, action);
     case GET_NEWS:
-      return {
-        ...state,
-        news: action.payload,
-      };
+      return getNews(state, action);
     case GET_RATES:
-      return {
-        ...state,
-        rates: action.payload,
-      };
+      return getRates(state, action);
     case GET_ERROR:
-      return {
-        ...state,
-        error: true,
-        errorMessage: action.payload,
-      };
+      return getError(state, action);
     default:
       return state;
   }
