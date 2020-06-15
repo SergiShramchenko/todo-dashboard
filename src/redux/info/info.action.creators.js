@@ -1,4 +1,4 @@
-import { startLoading, stopLoading } from '../ui/ui.actions';
+import { startLoadingInfoPanel, stopLoadingInfoPanel } from '../ui/ui.actions';
 import { getWeather, getNews, getRates, getError } from './info.actions';
 
 const getWeatherInfo = () => (dispatch) =>
@@ -34,7 +34,7 @@ const fetchApiData = () => async (dispatch) =>
   ]);
 
 export const getDataInfo = () => async (dispatch) => {
-  dispatch(startLoading());
+  dispatch(startLoadingInfoPanel());
   await dispatch(fetchApiData());
-  dispatch(stopLoading());
+  dispatch(stopLoadingInfoPanel());
 };

@@ -1,4 +1,5 @@
 import {
+  GET_TASKS,
   ADD_TASK,
   DELETE_TASK,
   TOGGLE_OPTIONS,
@@ -9,6 +10,10 @@ import {
   GET_NEW_TASK_VALUE,
   CLEAN_UP_INPUT,
 } from './tasks.types';
+
+export const getTasks = () => ({
+  type: GET_TASKS,
+});
 
 export const addTask = (task) => ({
   type: ADD_TASK,

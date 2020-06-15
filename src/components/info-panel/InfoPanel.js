@@ -1,15 +1,8 @@
 import React from 'react';
-import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import {
-  selectWeather,
-  selectNews,
-  selectRates,
-} from '../../redux/info/info.selectors';
-
-import { selectLoading } from '../../redux/ui/ui.selectors';
+import { selectLoadingInfoPanel } from '../../redux/ui/ui.selectors';
 
 import News from '../news';
 import Weather from '../weather';
@@ -19,19 +12,16 @@ import withSkeleton from '../../hocs/with-skeleton';
 
 import './InfoPanel.css';
 
-const InfoPanel = ({ weather, news, rates }) => (
+const InfoPanel = () => (
   <div className='todo-info'>
-    <Weather weather={weather} />
-    <News news={news} />
-    <ExchangeRates rates={rates} />
+    <Weather />
+    <News />
+    <ExchangeRates />
   </div>
 );
 
 const mapStateToProps = createStructuredSelector({
-  news: selectNews,
-  rates: selectRates,
-  weather: selectWeather,
-  loading: selectLoading,
+  loading: selectLoadingInfoPanel,
 });
 
-export default compose(connect(mapStateToProps), withSkeleton)(InfoPanel);
+export default connect(mapStateToProps)(withSkeleton(InfoPanel));

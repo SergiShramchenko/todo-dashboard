@@ -1,5 +1,7 @@
 import { updateState } from '../reducer.utils';
 
+export const getTasks = (state) => updateState(state);
+
 export const addTask = (state, action) => {
   const tasks = [
     ...state.tasks,

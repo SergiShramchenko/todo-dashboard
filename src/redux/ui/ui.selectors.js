@@ -2,7 +2,11 @@ import { createSelector } from 'reselect';
 
 const selectUi = (state) => state.ui;
 
-export const selectLoading = createSelector(
+export const selectLoadingInfoPanel = createSelector(
   [selectUi],
-  ({ loading }) => loading
+  ({ loadingInfoPanel }) => loadingInfoPanel
+);
+export const selectLoadingTasksPanel = createSelector(
+  [selectUi],
+  ({ loadingTaskPanel }) => loadingTaskPanel
 );

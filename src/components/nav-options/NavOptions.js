@@ -1,10 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+
+import { selectOptions } from '../../redux/tasks/tasks.selectors';
+
+import {
+  toggleBtnAll,
+  toggleBtnActive,
+  toggleBtnDone,
+} from '../../redux/tasks/tasks.actions';
 
 import NavOptionItem from '../nav-option-item';
 
 import './navOptions.css';
 
-export default ({
+const NavOptions = ({
   options: { all, active, done },
   toggleBtnAll,
   toggleBtnActive,
@@ -18,3 +28,15 @@ export default ({
     </div>
   </div>
 );
+
+const mapStateToProps = createStructuredSelector({
+  options: selectOptions,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  toggleBtnAll: () => dispatch(toggleBtnAll()),
+  toggleBtnActive: () => dispatch(toggleBtnActive()),
+  toggleBtnDone: () => dispatch(toggleBtnDone()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavOptions);

@@ -3,9 +3,9 @@ import { GET_WEATHER, GET_NEWS, GET_RATES, GET_ERROR } from './info.types';
 import { getWeather, getNews, getRates, getError } from './info.reducer.utils';
 
 const initialState = {
-  news: [],
-  rates: {},
-  weather: {},
+  news: null,
+  rates: null,
+  weather: null,
   error: false,
   errorMessage: '',
 };

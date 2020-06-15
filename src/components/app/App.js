@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { getDataInfo } from '../../redux/info/info.action.creators';
+import { getData } from '../../redux/rootActionCreator';
 
 import InfoPanel from '../info-panel';
 import TasksPanel from '../tasks-panel';
@@ -9,7 +9,7 @@ import TasksPanel from '../tasks-panel';
 import './App.css';
 
 class App extends Component {
-  componentDidMount = () => this.props.getDataInfo();
+  componentDidMount = () => setTimeout(() => this.props.getData(), 1150);
   render() {
     return (
       <div className='app-container'>
@@ -22,8 +22,4 @@ class App extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  getDataInfo: () => dispatch(getDataInfo()),
-});
-
-export default connect(null, mapDispatchToProps)(App);
+export default connect(null, { getData })(App);

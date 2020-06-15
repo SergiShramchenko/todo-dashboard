@@ -1,4 +1,5 @@
 import {
+  GET_TASKS,
   ADD_TASK,
   DELETE_TASK,
   TOGGLE_OPTIONS,
@@ -11,6 +12,7 @@ import {
 } from './tasks.types';
 
 import {
+  getTasks,
   addTask,
   deleteTask,
   toogleOptions,
@@ -23,26 +25,7 @@ import {
 } from './tasks.reducer.utils';
 
 const initialState = {
-  tasks: [
-    {
-      id: 0,
-      name: 'Learn TypeScript',
-      done: false,
-      important: false,
-    },
-    {
-      id: 1,
-      name: 'Learn ECMAScript',
-      done: false,
-      important: false,
-    },
-    {
-      id: 2,
-      name: 'Learn MobX',
-      done: true,
-      important: false,
-    },
-  ],
+  tasks: [],
   options: {
     all: true,
     active: false,
@@ -54,6 +37,8 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case GET_TASKS:
+      return getTasks(state);
     case ADD_TASK:
       return addTask(state, action);
     case DELETE_TASK:

@@ -1,8 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+
+import { selectSearchValue } from '../../redux/tasks/tasks.selectors';
+
+import { getSearchValue } from '../../redux/tasks/tasks.actions';
 
 import './searchInput.css';
 
-export default ({ searchValue, getSearchValue }) => (
+const SearchInput = ({ searchValue, getSearchValue }) => (
   <input
     className='todo-tasks__input'
     type='text'
@@ -12,3 +18,10 @@ export default ({ searchValue, getSearchValue }) => (
     onChange={(e) => getSearchValue(e.target.value)}
   />
 );
+
+const mapStateToProps = () =>
+  createStructuredSelector({
+    searchValue: selectSearchValue,
+  });
+
+export default connect(mapStateToProps, { getSearchValue })(SearchInput);
