@@ -1,18 +1,30 @@
 .todo-tasks__input {
   margin-top: 30px;
   width: 60%;
-  height: 30px;
+  height: 32px;
   border-radius: 5px;
   border: none;
-  background-color: rgb(85, 83, 83);
+  background-color: rgb(54, 54, 54);
   text-indent: 10px;
   color: rgb(151, 149, 149);
+  color: rgb(185, 185, 187);
+  transition: 0.2s ease-out;
 }
 .todo-tasks__input:focus {
   outline: none;
+  background-color: rgb(59, 59, 59);
+  transition: 0.2s ease-in;
 }
 
 .todo-tasks__input::placeholder {
-  color: rgb(151, 149, 149);
+  color: rgb(136, 133, 133);
   font-size: 11px;
+  transition: 0.2s ease-out;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .todo-tasks__input {
+    width: 80%;
+  }
 }

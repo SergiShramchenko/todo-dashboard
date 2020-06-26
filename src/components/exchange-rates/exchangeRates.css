@@ -8,6 +8,9 @@
   /* justify-content: center;
   align-items: center; */
   /* border: solid 1px tomato; */
+  background-color: rgb(34, 33, 33);
+  border-bottom-left-radius: 10px;
+  cursor: default;
 }
 
 .todo-info__exchange-rate h3 {
@@ -25,7 +28,7 @@
 }
 
 .usd {
-  font-size: 14px;
+  font-size: 13px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin-left: 10px;
@@ -45,7 +48,7 @@
   margin-left: 10px;
   margin-right: 10px;
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .todo-info__exchange-rate::-webkit-scrollbar {
@@ -69,4 +72,5 @@
 .dollar-icon {
   margin-top: 10px;
   margin-bottom: 10px;
+  opacity: 0.8;
 }

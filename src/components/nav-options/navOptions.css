@@ -1,5 +1,5 @@
 .options {
-  margin-top: 25px;
+  margin-top: 30px;
   display: flex;
   margin-left: 0;
   width: 60%;
@@ -7,12 +7,17 @@
   justify-content: flex-end;
 }
 
+@media (max-width: 768px) {
+  .options {
+    width: 80%;
+  }
+}
+
 .options-features {
   /* border: solid 1px blue; */
-  width: 35%;
+  /* width: 35%; */
   display: flex;
   justify-content: space-between;
-  margin-right: 10px;
   color: rgb(114, 112, 112);
   font-size: 13px;
 }
@@ -23,8 +28,16 @@
   width: 50px;
   text-align: center;
   cursor: pointer;
+  margin-left: 20px;
+}
+
+.options-features p:first-child {
+  margin-left: 0;
 }
 
 .active {
-  background-color: #363333;
+  background-color: #3a3939;
+  font-weight: 500;
+  color: rgb(167, 164, 164);
+  transition: 0.2s ease-in;
 }

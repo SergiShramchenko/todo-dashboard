@@ -13,8 +13,8 @@ const Weather = ({ weather: { main, name, weather } }) => (
   <div className='todo-info__weather'>
     <h3>Weather</h3>
     <div className='weather-block'>
-      <WeatherDay weather={weather} name={name} />
-      <WeatherData main={main} />
+      <WeatherDay name={name} />
+      <WeatherData weather={weather} main={main} />
     </div>
   </div>
 );

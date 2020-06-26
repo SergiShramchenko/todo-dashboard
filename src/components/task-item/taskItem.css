@@ -4,8 +4,23 @@
   font-size: 14px;
   width: 70%;
   margin: 0 auto;
-  margin-bottom: 35px;
   margin-top: 10px;
+  /* margin-bottom: 10px; */
+  height: 10%;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .tasks__item {
+    width: 85%;
+  }
+}
+
+.item {
+  font-size: 14px;
+  font-family: monospace;
+  color: rgb(185, 185, 187);
+  /* border: solid 2px tomato; */
 }
 
 .tasks__item:last-child {
@@ -13,7 +28,7 @@
 }
 
 .tasks__item-functions {
-  margin-right: 20px;
+  /* margin-right: 20px; */
   width: 20%;
   display: flex;
   justify-content: space-between;
@@ -21,25 +36,17 @@
 
 /* TODO-TASKS END */
 
-/*  */
-
-.material-icons {
-  font-size: 16px;
-  cursor: pointer;
-}
-
-/*  */
-
 /*  DONE IMPORTANT DELETE */
 
 .item.done {
-  color: rgb(95, 134, 113);
+  color: rgb(111, 161, 134);
   text-decoration: line-through;
+  font-weight: 700;
 }
 
 .item.important {
   font-size: 20px;
-  color: tomato;
+  color: rgb(231, 97, 93);
 }
 
 /*  DONE IMPORTANT DELETE */

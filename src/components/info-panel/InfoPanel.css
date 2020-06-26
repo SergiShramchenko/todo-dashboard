@@ -1,19 +1,20 @@
 /* SIDE PANEL START */
 
 .todo-info {
-  /* border-right: solid 1px rgb(65, 63, 63); */
-  height: 100%;
   width: 22%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
+  /* border: solid 2px tomato; */
 }
 
 h3 {
   margin-left: 10px;
-  font-weight: normal;
   font-size: 16px;
   color: white;
+  font-weight: normal;
 }
 
 /* SIDE PANEL END */

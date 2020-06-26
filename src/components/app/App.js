@@ -9,7 +9,8 @@ import TasksPanel from '../tasks-panel';
 import './App.css';
 
 class App extends Component {
-  componentDidMount = () => setTimeout(() => this.props.getData(), 1150);
+  componentDidMount = () => setTimeout(() => this.props.getData(), 2150);
+
   render() {
     return (
       <div className='app-container'>

@@ -25,7 +25,26 @@ import {
 } from './tasks.reducer.utils';
 
 const initialState = {
-  tasks: [],
+  tasks: [
+    {
+      id: 0,
+      name: 'Learn TypeScript',
+      done: false,
+      important: false,
+    },
+    {
+      id: 1,
+      name: 'Learn ECMAScript',
+      done: false,
+      important: false,
+    },
+    {
+      id: 2,
+      name: 'Learn MobX',
+      done: true,
+      important: false,
+    },
+  ],
   options: {
     all: true,
     active: false,

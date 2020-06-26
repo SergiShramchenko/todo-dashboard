@@ -1,14 +1,14 @@
 import { startLoadingInfoPanel, stopLoadingInfoPanel } from '../ui/ui.actions';
 import { getWeather, getNews, getRates, getError } from './info.actions';
 
-const getWeatherInfo = () => (dispatch) =>
+const getWeatherInfo = () => async (dispatch) => {
   fetch(
     `${process.env.REACT_APP_WEATHER_API_URL}${process.env.REACT_APP_WEATHER_API_KEY}`
   )
     .then((res) => res.json())
     .then((weather) => dispatch(getWeather(weather)))
     .catch((error) => dispatch(getError(error)));
-
+};
 const getNewsInfo = () => (dispatch) =>
   fetch(
     `${process.env.REACT_APP_NEWS_API_URL}${process.env.REACT_APP_NEWS_API_KEY}`

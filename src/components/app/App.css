@@ -18,9 +18,8 @@
 .todo {
   width: 95%;
   height: 90%;
-  border-radius: 10px;
-  transition: ease-out 0.2s;
-  background-color: rgb(43, 41, 41);
   display: flex;
   align-items: center;
+  background-color: rgb(43, 41, 41);
+  border-radius: 10px;
 }

@@ -1,14 +1,16 @@
 import React from 'react';
 
 import WeatherItem from '../weather-item';
+import WeatherIcon from '../weather-icon/';
 
 import './weatherData.css';
 
-export default ({ main }) =>
+export default ({ weather, main }) =>
   main ? (
     <>
       <div className='todo-info__weather-temp'>
         <WeatherItem temp={main.temp} className={'temp'} />
+        <WeatherIcon weather={weather} />
       </div>
       <div className='todo-info__weather-data'>
         <WeatherItem name={'min'} temp={main.temp_min} />

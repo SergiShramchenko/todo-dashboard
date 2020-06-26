@@ -1,8 +1,17 @@
 import React from 'react';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
+import './skeleton.css';
+
 export default () => (
-  <SkeletonTheme color='#202020' highlightColor='#444'>
-    <Skeleton width={100} height={10} duration={1} count={3} />
-  </SkeletonTheme>
+  <div className='skeleton'>
+    <SkeletonTheme color='#202020' highlightColor='#444'>
+      <Skeleton
+        duration={1.2}
+        count={7}
+        height={12}
+        style={{ marginTop: 20, marginBottom: 20 }}
+      />
+    </SkeletonTheme>
+  </div>
 );

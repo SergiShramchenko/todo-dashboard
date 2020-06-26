@@ -1,0 +1,12 @@
+.material-icons {
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s ease-out;
+  padding: 2px;
+  /* border: solid 2px tomato; */
+}
+
+.material-icons:hover {
+  color: rgb(78, 78, 80);
+  transition: 0.2s ease-in;
+}

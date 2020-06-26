@@ -5,15 +5,22 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-evenly; */
+  /* justify-content: center; */
   color: rgb(201, 196, 196);
   /* border: solid 1px tomato; */
   background-color: rgb(46, 45, 45);
   overflow: auto;
+  cursor: default;
 }
 
 .todo-info__news h3 {
-  margin-top: 20px;
+  margin-top: 10px;
+  /* color: rgb(230, 148, 142); */
+  /* color: rgb(244, 134, 126); */
+  color: rgb(255, 120, 110);
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 13px;
 }
 
 /* NEWS */
